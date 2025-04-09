@@ -60,7 +60,7 @@ jobs:
           push: true
           tags: bam96//hw_9_broken_qr_code:${{ github.sha }} # Uses the Git SHA for tagging
           platforms: linux/amd64,linux/arm64 # Multi-platform support
-          cache-from: type=registry,ref=bam96//hw_9_broken_qr_code:cache
+          cache-from: type=registry,ref=bam96//broken_qrcode:cache
           cache-to: type=inline,mode=max
           
       - name: Scan the Docker image
