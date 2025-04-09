@@ -58,15 +58,15 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: bam96//hw_9_broken_qr_code:${{ github.sha }} # Uses the Git SHA for tagging
+          tags: bam96/hw_9_broken_qr_code:${{ github.sha }} # Uses the Git SHA for tagging
           platforms: linux/amd64,linux/arm64 # Multi-platform support
-          cache-from: type=registry,ref=bam96//broken_qrcode:cache
+          cache-from: type=registry,ref=bam96/hw_9_broken_qr_code:cache
           cache-to: type=inline,mode=max
           
       - name: Scan the Docker image
         uses: aquasecurity/trivy-action@master
         with:
-          image-ref: 'bam96//hw_9_broken_qr_code:${{ github.sha }}'
+          image-ref: 'bam96/hw_9_broken_qr_code:${{ github.sha }}'
           format: 'table'
           exit-code: '1' # Fail the job if vulnerabilities are found
           ignore-unfixed: true
