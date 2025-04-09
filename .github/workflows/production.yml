@@ -3,10 +3,10 @@ name: CI/CD Pipeline
 on:
   push:
     branches:
-      - hw_9_broken_qr_code
+      - main
   pull_request:
     branches:
-      - hw_9_broken_qr_code
+      - main
 
 jobs:
   test:
